@@ -4,16 +4,16 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className="navbar navbar-expand-lg"
+        className="navbar navbar-expand-lg navbar-light"
         style={{ backgroundColor: "#e3f2fd" }}
       >
-        <div className="container" style={{ maxWidth: "1200px" }}>
+        <div className="container-fluid">
           {/* Logo */}
-          <Link to={"/"} className="navbar-brand ">
+          <Link to="/" className="navbar-brand fw-bold text-primary">
             MyApp
           </Link>
 
-          {/* Toggler for small screens */}
+          {/* Toggler Button */}
           <button
             className="navbar-toggler"
             type="button"
@@ -26,20 +26,26 @@ const Navbar = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
 
-          {/* Navbar content */}
-          <div
-            className="collapse navbar-collapse justify-content-end"
-            id="navbarNav"
-          >
-            <div className="d-flex">
-              <Link
-                to={"/login"}
-                className="btn btn-outline-dark me-2"
-                type="button"
-              >
-                Login
-              </Link>
-            </div>
+          {/* Collapsible Navbar Links */}
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav ms-auto">
+              <li className="nav-item">
+                <Link
+                  to="/login"
+                  className="btn btn-outline-primary me-2 rounded-pill px-4"
+                >
+                  Login
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  to="/signup"
+                  className="btn btn-primary rounded-pill px-4"
+                >
+                  Sign Up
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
       </nav>
